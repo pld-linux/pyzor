@@ -1,6 +1,7 @@
 %include        /usr/lib/rpm/macros.python
 %define		module pyogg
-Summary:	Pyzor is a collaborative system to detect and block spam
+Summary:	Pyzor - a collaborative system to detect and block spam
+Summary(pl):	Pyzor - wspó³pracuj±cy system do wykrywania i blokowania spamu
 Name:		pyzor
 Version:	0.4.0
 Release:	1
@@ -20,10 +21,20 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 A collaborative system to detect and block spam.
 
-Pyzor initially started out to be merely a Python implementation of Razor, but
-due to the protocol and the fact that Razor's server is not Open Source or
-software libre, I decided to impelement Pyzor with a new protocol and release
-the entire system as Open Source and software libre.
+Pyzor initially started out to be merely a Python implementation of
+Razor, but due to the protocol and the fact that Razor's server is not
+Open Source or software libre, the author decided to impelement Pyzor
+with a new protocol and release the entire system as Open Source and
+software libre.
+
+%description -l pl
+Wspó³pracuj±cy system do wykrywania i blokowania spamu.
+
+Pyzor pocz±tkowo mia³ byæ pythonow± implementacj± Razora, ale z powodu
+protoko³u i faktu, ¿e serwer Razora nie jest wolnodostêpnym
+oprogramowaniem z otwartymi ¼ród³ami, autor zdecydowa³ siê
+zaimplementowaæ Pyzora z nowym protoko³em i wydaæ ca³y system jako
+oprogramowanie wolnodostêpne z otwartymi ¼ród³ami.
 
 %prep
 %setup -q
@@ -47,6 +58,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog NEWS THANKS UPGRADING docs/*
-%{_bindir}/*
+%attr(755,root,root) %{_bindir}/*
 %dir %{py_sitedir}/pyzor
 %{py_sitedir}/pyzor/*.py[co]
