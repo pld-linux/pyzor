@@ -1,4 +1,3 @@
-%include        /usr/lib/rpm/macros.python
 %define		module pyogg
 Summary:	Pyzor - a collaborative system to detect and block spam
 Summary(pl):	Pyzor - wspó³pracuj±cy system do wykrywania i blokowania spamu
