@@ -13,7 +13,6 @@ Patch1:		%{name}-handle_unknown_encoding.patch
 Patch2:		%{name}-python_path.patch
 URL:		http://pyzor.sourceforge.net/
 BuildRequires:	python-devel
-BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
