@@ -7,7 +7,7 @@ Release:	1
 License:	GPL
 Group:		Networking/Mail
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
-# Source0-md5:	45a4ecc4d0600661199e4040a81ea3fe
+# Source0-md5:	ee7afe4cc9d419bce5f29250a01c4374
 Patch0:		%{name}-handle_digest_is_none.patch
 Patch1:		%{name}-handle_unknown_encoding.patch
 Patch2:		%{name}-python_path.patch
