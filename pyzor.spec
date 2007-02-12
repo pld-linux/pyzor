@@ -1,6 +1,6 @@
 %define		module pyogg
 Summary:	Pyzor - a collaborative system to detect and block spam
-Summary(pl):	Pyzor - wspó³pracuj±cy system do wykrywania i blokowania spamu
+Summary(pl.UTF-8):   Pyzor - wspÃ³Å‚pracujÄ…cy system do wykrywania i blokowania spamu
 Name:		pyzor
 Version:	0.4.0
 Release:	3
@@ -25,14 +25,14 @@ Open Source or software libre, the author decided to impelement Pyzor
 with a new protocol and release the entire system as Open Source and
 software libre.
 
-%description -l pl
-Wspó³pracuj±cy system do wykrywania i blokowania spamu.
+%description -l pl.UTF-8
+WspÃ³Å‚pracujÄ…cy system do wykrywania i blokowania spamu.
 
-Pyzor pocz±tkowo mia³ byæ pythonow± implementacj± Razora, ale z powodu
-protoko³u i faktu, ¿e serwer Razora nie jest wolnodostêpnym
-oprogramowaniem z otwartymi ¼ród³ami, autor zdecydowa³ siê
-zaimplementowaæ Pyzora z nowym protoko³em i wydaæ ca³y system jako
-oprogramowanie wolnodostêpne z otwartymi ¼ród³ami.
+Pyzor poczÄ…tkowo miaÅ‚ byÄ‡ pythonowÄ… implementacjÄ… Razora, ale z powodu
+protokoÅ‚u i faktu, Å¼e serwer Razora nie jest wolnodostÄ™pnym
+oprogramowaniem z otwartymi ÅºrÃ³dÅ‚ami, autor zdecydowaÅ‚ siÄ™
+zaimplementowaÄ‡ Pyzora z nowym protokoÅ‚em i wydaÄ‡ caÅ‚y system jako
+oprogramowanie wolnodostÄ™pne z otwartymi ÅºrÃ³dÅ‚ami.
 
 %prep
 %setup -q
