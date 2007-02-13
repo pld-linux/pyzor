@@ -1,6 +1,6 @@
 %define		module pyogg
 Summary:	Pyzor - a collaborative system to detect and block spam
-Summary(pl.UTF-8):   Pyzor - współpracujący system do wykrywania i blokowania spamu
+Summary(pl.UTF-8):	Pyzor - współpracujący system do wykrywania i blokowania spamu
 Name:		pyzor
 Version:	0.4.0
 Release:	3
