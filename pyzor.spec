@@ -2,15 +2,12 @@
 Summary:	Pyzor - a collaborative system to detect and block spam
 Summary(pl.UTF-8):	Pyzor - współpracujący system do wykrywania i blokowania spamu
 Name:		pyzor
-Version:	0.4.0
-Release:	4
-License:	GPL
+Version:	0.5.0
+Release:	1
+License:	GPL v2
 Group:		Networking/Mail
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
-# Source0-md5:	ee7afe4cc9d419bce5f29250a01c4374
-Patch0:		%{name}-handle_digest_is_none.patch
-Patch1:		%{name}-handle_unknown_encoding.patch
-Patch2:		%{name}-python_path.patch
+# Source0-md5:	21f5ed92470ab12a7658cc46bf59a3e9
 URL:		http://pyzor.sourceforge.net/
 BuildRequires:	python-devel
 %pyrequires_eq	python-modules
@@ -36,9 +33,6 @@ oprogramowanie wolnodostępne z otwartymi źródłami.
 
 %prep
 %setup -q
-%patch0 -p0
-%patch1 -p0
-%patch2 -p0
 
 %build
 python setup.py build
@@ -57,7 +51,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog NEWS THANKS UPGRADING docs/*
+%doc NEWS README THANKS UPGRADING docs/*
 %attr(755,root,root) %{_bindir}/*
 %dir %{py_sitescriptdir}/pyzor
 %{py_sitescriptdir}/pyzor/*.py[co]
