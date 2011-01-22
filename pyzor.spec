@@ -5,11 +5,13 @@ Name:		pyzor
 Version:	0.5.0
 Release:	2
 License:	GPL v2
-Group:		Networking/Mail
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
+Group:		Applications/Mail
+Source0:	http://downloads.sourceforge.net/pyzor/%{name}-%{version}.tar.bz2
 # Source0-md5:	21f5ed92470ab12a7658cc46bf59a3e9
 URL:		http://pyzor.sourceforge.net/
 BuildRequires:	python-devel
+BuildRequires:	python-modules
+BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
