@@ -2,22 +2,23 @@
 %bcond_without	doc
 #
 %define		module pyogg
-%define		dver	1-0-0
+%define		dver	1-1-2
 Summary:	Pyzor - a collaborative system to detect and block spam
 Summary(pl.UTF-8):	Pyzor - współpracujący system do wykrywania i blokowania spamu
 Name:		pyzor
-Version:	1.0.0
+Version:	1.1.2
 Release:	1
 License:	GPL v2
 Group:		Applications/Mail
 Source0:	https://github.com/SpamExperts/pyzor/archive/release-%{dver}.tar.gz
-# Source0-md5:	82b351cbf7594974240d655e2e98f20c
+# Source0-md5:	659eca5fe90582b1ac5841a3340f5620
 URL:		http://pyzor.org/
-BuildRequires:	python-devel
-BuildRequires:	python-modules
+BuildRequires:	python3-devel
+BuildRequires:	python3-modules
 BuildRequires:	rpm-pythonprov
 %{?with_doc:BuildRequires:	sphinx-pdg}
-Requires:	python-modules
+Requires:	python3-modules
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -42,17 +43,12 @@ oprogramowanie wolnodostępne z otwartymi źródłami.
 %setup -q -n %{name}-release-%{dver}
 
 %build
-python setup.py build
+%py3_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-python setup.py install \
-	--optimize=2 \
-	--root $RPM_BUILD_ROOT
-
-rm -f $RPM_BUILD_ROOT%{py_sitescriptdir}/pyzor/*.py
-rm -f $RPM_BUILD_ROOT%{py_sitescriptdir}/pyzor/*/*.py
+%py3_install
 
 %if %{with doc}
 cd docs
@@ -67,12 +63,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.rst THANKS %{?with_doc:docs/.build/html}
 %attr(755,root,root) %{_bindir}/*
-%dir %{py_sitescriptdir}/pyzor
-%{py_sitescriptdir}/pyzor/*.py[co]
-%dir %{py_sitescriptdir}/pyzor/engines
-%{py_sitescriptdir}/pyzor/engines/*.py[co]
-%dir %{py_sitescriptdir}/pyzor/hacks
-%{py_sitescriptdir}/pyzor/hacks/*.py[co]
-%if "%{py_ver}" > "2.4"
-%{py_sitescriptdir}/pyzor-%{version}-py*.egg-info
-%endif
+%{py3_sitescriptdir}/pyzor
+%{py3_sitescriptdir}/pyzor-%{version}-py*.egg-info
